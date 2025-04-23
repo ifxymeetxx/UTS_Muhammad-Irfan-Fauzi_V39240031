@@ -1,0 +1,19 @@
+from scipy.stats import poisson
+import matplotlib.pyplot as plt
+import numpy as np
+
+lambda_ = 8  
+hours_day =  12  
+days = 30
+
+data = poisson.rvs(lambda_, size=n_trials)
+
+unique, counts = np.unique(data, return_counts=True)
+freq = dict(zip(unique, counts))
+
+plt.bar(unique, counts, color='red')
+plt.title('Simulasi kedatangan pelanggan di gerai makanan cepat saji')
+plt.xlabel('Jumlah Pelanggan')
+plt.ylabel('Frekuensi')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
